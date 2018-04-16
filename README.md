@@ -1,2 +1,2 @@
 
-a web demo of jaba web
+a web demo of java web

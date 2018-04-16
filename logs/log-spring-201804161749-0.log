@@ -1,4 +1,0 @@
-[2018年04月16日05:49:20::893]  [http-nio-8080-exec-4]  [o.s.web.context.support.XmlWebApplicationContext] 
-	[INFO ]:
- 	Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Apr 16 17:49:20 CST 2018]; parent: Root WebApplicationContext
-

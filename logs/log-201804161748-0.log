@@ -1,8 +1,0 @@
-[2018年04月16日05:48:44::360]  [RMI TCP Connection(3)-127.0.0.1]  [com.cement.ysh.web.SeckillController] 
-	[INFO ]:
- 	****************11111*****  postConstruct **************************************
-
-[2018年04月16日05:48:44::360]  [RMI TCP Connection(3)-127.0.0.1]  [com.cement.ysh.web.SeckillController] 
-	[INFO ]:
- 	*********************  afterPropertiesSet **************************************
-

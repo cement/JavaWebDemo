@@ -1,2 +1,1 @@
-
-a web demo of java web
+a web project demo

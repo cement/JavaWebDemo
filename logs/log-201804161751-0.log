@@ -1,0 +1,8 @@
+[2018年04月16日05:51:26::702]  [localhost-startStop-2]  [com.cement.ysh.web.SeckillController] 
+	[INFO ]:
+ 	*********************  PreDestroy **************************************
+
+[2018年04月16日05:51:26::803]  [localhost-startStop-2]  [com.cement.ysh.web.SeckillController] 
+	[INFO ]:
+ 	*********************  destroy **************************************
+

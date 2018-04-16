@@ -1,0 +1,12 @@
+[2018年04月16日05:48:37::378]  [RMI TCP Connection(3)-127.0.0.1]  [org.springframework.web.context.ContextLoader] 
+	[INFO ]:
+ 	Root WebApplicationContext: initialization started
+
+[2018年04月16日05:48:37::714]  [RMI TCP Connection(3)-127.0.0.1]  [o.s.web.context.support.XmlWebApplicationContext] 
+	[INFO ]:
+ 	Refreshing Root WebApplicationContext: startup date [Mon Apr 16 17:48:37 CST 2018]; root of context hierarchy
+
+[2018年04月16日05:48:44::415]  [RMI TCP Connection(3)-127.0.0.1]  [org.springframework.web.context.ContextLoader] 
+	[INFO ]:
+ 	Root WebApplicationContext: initialization completed in 7029 ms
+

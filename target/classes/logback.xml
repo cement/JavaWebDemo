@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" scanPeriod="1 seconds" debug="false" packagingData="true">
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+    <property name="LOG_HOME" value="E:/IntelliJ/work/Java-SSM-Demo/" />
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!--&lt;!&ndash; 按照每天生成日志文件 &ndash;&gt;-->
+    <!--<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+
+        <!--&lt;!&ndash;<file>${LOG_HOME}/log-current.log</file>&ndash;&gt;-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--&lt;!&ndash;日志文件输出的文件名&ndash;&gt;-->
+            <!--<FileNamePattern>${LOG_HOME}/logs/log-%d{MM-dd-HH-mm}.log</FileNamePattern>-->
+            <!--&lt;!&ndash;日志文件保留天数&ndash;&gt;-->
+            <!--<MaxHistory>30</MaxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+            <!--&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符&ndash;&gt;-->
+            <!--<pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%-20thread] %-5level %logger{50} - %msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--&lt;!&ndash;日志文件最大的大小&ndash;&gt;-->
+        <!--<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">-->
+            <!--<MaxFileSize>10MB</MaxFileSize>-->
+        <!--</triggeringPolicy>-->
+    <!--</appender>-->
+
+    <!-- 滚动日志文件，这个比较常用 -->
+    <appender name="ROLLINGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 当prudent等于true的时候file就不会起效果-->
+        <!--<prudent>true</prudent>-->
+        <file>${LOG_HOME}/log-current.log</file>
+        <!-- 按天新建log日志 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${LOG_HOME}/logs/log-%d{yyyyMMddHHmm}-%i.log</fileNamePattern>
+            <!-- 保留30天的历史日志 -->
+            <maxHistory>30</maxHistory>
+
+            <!-- 基于大小和时间，这个可以有，可以没有 -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <!-- 当一个日志大小大于10KB，则换一个新的日志。日志名的%i从0开始，自动递增 -->
+                <maxFileSize>10KB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <!-- %ex就是指抛出的异常，full是显示全部，如果在{}中写入数字，则表示展示多少行 -->
+            <pattern>[%d{yyyy年MM月dd日hh:mm:ss::SSS}]  [%thread]  [%logger{50}] %n\t[%-5level]:%n \t%msg%n%ex{full, DISPLAY_EX_EVAL}%n</pattern>
+            <!--<pattern>[%-4date] [%thread] %-5level %logger{35} - %msg%n%ex{full, DISPLAY_EX_EVAL}</pattern>-->
+        </encoder>
+    </appender>
+
+    <!-- 滚动日志文件，这个比较常用 -->
+    <appender name="SPRINGROLLINGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 当prudent等于true的时候file就不会起效果-->
+        <!--<prudent>true</prudent>-->
+        <file>${LOG_HOME}/log-spring-current.log</file>
+        <!-- 按天新建log日志 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${LOG_HOME}/logs/log-spring-%d{yyyyMMddHHmm}-%i.log</fileNamePattern>
+            <!-- 保留30天的历史日志 -->
+            <maxHistory>30</maxHistory>
+
+            <!-- 基于大小和时间，这个可以有，可以没有 -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <!-- 当一个日志大小大于10KB，则换一个新的日志。日志名的%i从0开始，自动递增 -->
+                <maxFileSize>10KB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <!-- %ex就是指抛出的异常，full是显示全部，如果在{}中写入数字，则表示展示多少行 -->
+            <pattern>[%d{yyyy年MM月dd日hh:mm:ss::SSS}]  [%thread]  [%logger{50}] %n\t[%-5level]:%n \t%msg%n%ex{full, DISPLAY_EX_EVAL}%n</pattern>
+            <!--<pattern>[%-4date] [%thread] %-5level %logger{35} - %msg%n%ex{full, DISPLAY_EX_EVAL}</pattern>-->
+        </encoder>
+    </appender>
+
+    <logger name="com.cement.ysh" level="INFO" additivity="false">
+        <!-- 连接输出源，也就是上边那几个输出源 ，你可以随便选几个appender-->
+        <!--<appender-ref ref="FILE"/>-->
+        <appender-ref ref="ROLLINGFILE" />
+
+    </logger>
+    <logger name="org.springframework.web.context" level="INFO" additivity="true">
+        <!-- 连接输出源，也就是上边那几个输出源 ，你可以随便选几个appender-->
+        <!--<appender-ref ref="FILE"/>-->
+        <appender-ref ref="SPRINGROLLINGFILE" />
+
+    </logger>
+
+
+    <!-- 日志输出级别 -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
